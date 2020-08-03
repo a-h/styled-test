@@ -39,7 +39,7 @@ const Composition = withStyles(style)(Composer);
 describe('<Composition />', () => {
   it('should render CircularProgress', () => {
     const wrapper = mount(<Composition />);
-    // No longer need to dive().
-    expect(wrapper.find(CircularProgress)).toHaveLength(1);
+    const progress = wrapper.find(CircularProgress).first();
+    expect(progress.props().size).toBe(24);
   });
 });
